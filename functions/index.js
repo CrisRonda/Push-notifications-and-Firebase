@@ -4,7 +4,7 @@ const { google } = require("googleapis");
 const functions = require('firebase-functions');
 const admin = require('firebase-admin')
 const { JWT } = require('google-auth-library');
-var key = require('./OyeJarvis-c029d6c1a016.json');
+var key = require('./PATH JSON');
 const request = require("request");
 const uid2 = `YOUR USER ID`
 
