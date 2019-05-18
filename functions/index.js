@@ -25,7 +25,6 @@ exports.onUpdateCiudad = functions.database.ref('/Paradas/{id}/')
         console.log(aux);
         if (after) {
             console.log("Lleno");
-            // const msj= `Hay ${after} clientes conectados`
             const msj = `Publicidad ${after}`
             sendNotification(msj)
         }
