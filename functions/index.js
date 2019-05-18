@@ -13,8 +13,8 @@ admin.initializeApp(functions.config().firebase)
 exports.onUpdateCiudad = functions.database.ref('/Paradas/{id}/')
     .onUpdate((snapshot) => {
         // Grab the current value of what was written to the Realtime Database.
-        const after = snapshot.after.val().clientes
-        const before = snapshot.before.val().clientes
+        const after = snapshot.after.val().publicidad
+        const before = snapshot.before.val().publicidad
         console.log('Valor', after);
         console.log("Listo!");
         if (after === before) {
@@ -23,13 +23,28 @@ exports.onUpdateCiudad = functions.database.ref('/Paradas/{id}/')
         }
         const aux = `El valor ingresado es ${after}`
         console.log(aux);
-        if (after > 50) {
-            console.log("Es mayor");
-            const msj= `Hay ${after} clientes conectados`
+        if (after) {
+            console.log("Lleno");
+            // const msj= `Hay ${after} clientes conectados`
+            const msj = `Publicidad ${after}`
             sendNotification(msj)
         }
         else
-            console.log("Es menor!!");
+            console.log("Vacio");
+
+        return null
+    });
+
+
+exports.onCreatePublicidad = functions.database.ref('/Paradas/{id}/publicidad')
+    .onCreate((snapshot, context) => {
+        // Grab the current value of what was written to the Realtime Database.
+        const original = snapshot.val();
+        if (original) {
+            console.log('True');
+        } else {
+            console.log('False');
+        }
         return null
     });
 
