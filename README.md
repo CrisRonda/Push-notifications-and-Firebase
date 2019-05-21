@@ -12,4 +12,4 @@ Proyecto para probar funciones de Google Assistant y Firebase.
 5. Realiza un deploy con >> firebase deploy --only functions
 Listo! 
 
-[Continua complementa el proyecto con el asistente de voz](url completa)
+[Complementa el proyecto con el asistente de voz](https://github.com/CrisRonda/DialogFlow-PushNotifications)
